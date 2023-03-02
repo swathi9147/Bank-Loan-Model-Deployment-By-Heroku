@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Personal Loan Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Family" placeholder="Family" required="required" />
+		<input type="text" name="Education" placeholder="Education" required="required" />
+			<input type="text" name="Securities_Account" placeholder="Securities_Account" required="required" />
+				<input type="text" name="CD_Account" placeholder="CD_Account" required="required" />
+					<input type="text" name="Online" placeholder="Online" required="required" />
+						<input type="text" name="CreditCard" placeholder="CreditCard" required="required" />
+							<input type="text" name="log_CCAvg" placeholder="log_CCAvg" required="required" />
+								<input type="text" name="sqrt_income" placeholder="sqrt_income" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{prediction_text}}
+
+ </div>
+
+
+</body>
+</html>
